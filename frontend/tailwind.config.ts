@@ -7,12 +7,22 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      'plus-jakarta': 'Plus Jakarta Sans'
+    },
+    screens: {
+      sm: '375px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px'
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      colors: {
+        semiDark: '#161D2F',
+        darkBg: '#10141E',
+        redTomato: "#FC4747",
+        semiGray: '#5A698F',
+      }
     },
   },
   plugins: [],

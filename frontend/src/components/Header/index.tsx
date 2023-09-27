@@ -1,20 +1,24 @@
 import React from 'react';
 
 import MovieLink from "@/components/Link/MovieLink";
-import NextLink from "@/components/Link";
 import HomeLink from "@/components/Link/HomeLink";
-import Tvseries from "@/components/Link/TvseriesLink";
 import TvseriesLink from "@/components/Link/TvseriesLink";
 import Bookmark from "@/components/Link/Bookmark";
-
+import Image from 'next/image';
+import profilePic from '../../assets/image-avatar.png';
+import logoPic from '../../assets/logo.svg';
 const Header = () => {
     return (
-        <div>
-            <HomeLink />
-            <MovieLink />
-            <TvseriesLink />
-            <Bookmark />
-        </div>
+        <header className="flex justify-between p-4 bg-semiDark items-center">
+            <Image width={"24"} height={"24"} src={logoPic} alt={"Profile"} />
+            <div className="flex gap-6">
+                <HomeLink />
+                <MovieLink />
+                <TvseriesLink />
+                <Bookmark />
+            </div>
+            <Image width={"24"} height={"24"} src={profilePic} alt={"Profile"} />
+        </header>
     );
 };
 
