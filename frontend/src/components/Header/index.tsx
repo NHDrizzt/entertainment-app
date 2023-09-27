@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 
 import MovieLink from "@/components/Link/MovieLink";
@@ -7,7 +8,12 @@ import Bookmark from "@/components/Link/Bookmark";
 import Image from 'next/image';
 import profilePic from '../../assets/image-avatar.png';
 import logoPic from '../../assets/logo.svg';
+import {useUserContext} from "@/context/UserContextProvider";
+
 const Header = () => {
+
+    const { currentUserLocation, setCurrentUserLocation } = useUserContext();
+
     return (
         <header className="flex justify-between p-4 bg-semiDark items-center">
             <Image width={"24"} height={"24"} src={logoPic} alt={"Profile"} />
