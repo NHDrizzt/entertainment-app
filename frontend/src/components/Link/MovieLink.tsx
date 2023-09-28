@@ -14,9 +14,11 @@ const MovieLink = () => {
 
     return (
         <Link href={"/movies"}>
-            <Image onClick={() => changeLocation("Movies")}
-                   className={`${currentUserLocation === 'Movies' ? 'dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert' : ''}`}
-                   width="16" height="16" priority src={movieslink} alt={"Home"} />
+            <div className="w-4 h-4 md:w-full md:h-full">
+                <Image onClick={() => changeLocation("Movies")}
+                       className={`${currentUserLocation === 'Movies' ? 'dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert' : ''}`}
+                       priority src={movieslink} alt={"Home"} />
+            </div>
         </Link>
     );
 };

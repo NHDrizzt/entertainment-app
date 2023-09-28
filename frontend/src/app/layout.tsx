@@ -20,8 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
           <UserContextProvider>
-              <Header />
-              {children}
+              <div className="flex flex-col h-screen xl:flex-row">
+                  <Header />
+                  {children}
+              </div>
           </UserContextProvider>
       </body>
     </html>

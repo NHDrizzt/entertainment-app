@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 
 export default function Home() {
     return (
-        <div className="flex">
+        <div className="mt-8">
             <h1>Home</h1>
         </div>
     )
