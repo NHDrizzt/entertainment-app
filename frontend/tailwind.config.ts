@@ -7,9 +7,7 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    fontFamily: {
-      'plus-jakarta': 'Plus Jakarta Sans'
-    },
+
     screens: {
       sm: '375px',
       md: '768px',
@@ -17,6 +15,19 @@ const config: Config = {
       xl: '1440px'
     },
     extend: {
+      fontFamily: {
+        outfit: 'Outfit'
+      },
+      fontSize: {
+        small: '15px',
+        medium: '24px',
+        large: '32px',
+      },
+      fontWeight: {
+        light: '300',
+        regular: '500',
+        bold: '700',
+      },
       colors: {
         semiDark: '#161D2F',
         darkBg: '#10141E',

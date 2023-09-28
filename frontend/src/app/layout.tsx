@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Header from "@/components/Header";
 import UserContextProvider from "@/context/UserContextProvider";
+import SearchBar from "@/components/SearchBar";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
           <UserContextProvider>
               <div className="flex flex-col h-screen xl:flex-row">
                   <Header />
+                  <SearchBar />
                   {children}
               </div>
           </UserContextProvider>
