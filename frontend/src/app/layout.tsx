@@ -23,8 +23,10 @@ export default function RootLayout({
           <UserContextProvider>
               <div className="flex flex-col h-screen xl:flex-row">
                   <Header />
-                  <SearchBar />
-                  {children}
+                  <div className="xl:mt-[64px]">
+                      <SearchBar />
+                      {children}
+                  </div>
               </div>
           </UserContextProvider>
       </body>
