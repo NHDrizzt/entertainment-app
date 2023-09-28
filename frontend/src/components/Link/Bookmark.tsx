@@ -13,10 +13,12 @@ const Bookmark = () => {
 
     return (
         <Link href={"/bookmark"}>
-            <Image
-                onClick={() => changeLocation("Bookmark")}
-                className={`${currentUserLocation === 'Bookmark' ? 'dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert' : ''}`}
-                width="14" height="16" priority src={bookmark} alt={"Home"} />
+            <div className="w-4 h-4 md:w-full md:h-full">
+                <Image
+                    onClick={() => changeLocation("Bookmark")}
+                    className={`${currentUserLocation === 'Bookmark' ? 'dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert' : ''}`}
+                    priority src={bookmark} alt={"Home"} />
+            </div>
         </Link>
     );
 };

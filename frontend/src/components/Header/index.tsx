@@ -11,19 +11,20 @@ import logoPic from '../../assets/logo.svg';
 import {useUserContext} from "@/context/UserContextProvider";
 
 const Header = () => {
-
-    const { currentUserLocation, setCurrentUserLocation } = useUserContext();
-
     return (
-        <header className="flex justify-between p-4 bg-semiDark items-center">
-            <Image width={"24"} height={"24"} src={logoPic} alt={"Profile"} />
-            <div className="flex gap-6">
+        <header className="flex justify-between p-4 bg-semiDark items-center md:m-6 md:rounded-[10px] xl:h-[960px] xl:flex-col xl:m-8 xl:p-8 xl:justify-start ">
+            <div className="w-[24px] h-[24px] md:w-[32px] md:h-[32px]">
+                <Image src={logoPic} alt={"Profile"} />
+            </div>
+            <div className="flex gap-6 md:gap-8 xl:h-full xl:flex-col xl:pt-[74px]">
                 <HomeLink />
                 <MovieLink />
                 <TvseriesLink />
                 <Bookmark />
             </div>
-            <Image width={"24"} height={"24"} src={profilePic} alt={"Profile"} />
+            <div className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] xl:w-[40px] xl:h-[40px]">
+                <Image src={profilePic} alt={"Profile"} />
+            </div>
         </header>
     );
 };

@@ -15,7 +15,10 @@ const HomeLink: React.FC = () => {
 
     return (
         <Link href={"/home"}>
-            <Image onClick={() => changeLocation('Home')} className={`${currentUserLocation === 'Home' ? 'dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert' : ''}`} width="16" height="16" priority src={homelink} alt={"Home"} />
+            <div className="w-4 h-4 md:w-full md:h-full">
+                <Image onClick={() => changeLocation('Home')} className={`${currentUserLocation === 'Home' ? 'dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert' : ''}`}
+                       priority src={homelink} alt={"Home"} />
+            </div>
         </Link>
     );
 };
