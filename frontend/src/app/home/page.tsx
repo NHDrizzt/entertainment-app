@@ -38,10 +38,10 @@ export default function Home() {
 
     return (
         <div className="pt-6 pl-4">
-            <h1 className="font-outfit font-light text-[20px] text-white tracking-tightest">Trending</h1>
+            <h1 className="font-outfit font-light text-[20px] text-white tracking-tightest md: text-large">Trending</h1>
             <motion.div className="app">
                 <motion.div ref={carouselSettings} className="cursor-grab overflow-hidden" whileTap={{ cursor: "grabbing"}}>
-                    <motion.div className="flex shrink gap-x-4 pt-4" drag={"x"} dragConstraints={{right: 0, left: -width}}>
+                    <motion.div className="flex shrink gap-x-4 pt-4 md:pt-6 md:gap-x-10" drag={"x"} dragConstraints={{right: 0, left: -width}}>
                         {trendingData.map((item, index) => (
                             <TrendingCard
                                 key={index}
