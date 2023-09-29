@@ -8,7 +8,7 @@ import Trending from "@/components/Trending/Trending";
 
 export default function Home() {
     return (
-        <div className="pt-6 pl-4">
+        <div className="pt-6 pl-4 xl:pl-0">
             <Trending />
             <Recommended />
         </div>
