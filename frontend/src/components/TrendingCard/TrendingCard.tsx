@@ -9,25 +9,7 @@ import moviesIcon from "../../../public/icon-nav-movies2.svg";
 import tvseriesIcon from "../../../public/icon-nav-tv-series2.svg";
 
 
-interface CardProps {
-    title: string;
-    thumbnail: {
-        trending: {
-            small: string;
-            large: string;
-        }
-        regular: {
-            small: string,
-            medium: string,
-            "large": string
-        };
-    };
-    year: number;
-    category: string;
-    rating: string;
-    isBookmarked: boolean;
-    isTrending: boolean;
-}
+
 
 const TrendingCard: FC<CardProps> = (
     {   title,
@@ -51,12 +33,10 @@ const TrendingCard: FC<CardProps> = (
     const currentScreenWidth = useScreenWidth();
     const [isBooked, setIsBooked] = useState(false);
     const backgroundImageStyle = {
-
         backgroundImage: `url('${currentScreenWidth < 768 ? small : large}')`
     };
 
     const handleBookmark = () => {
-        console.log("bookmark clicked")
         setIsBooked(!isBooked);
     }
 
@@ -66,11 +46,11 @@ const TrendingCard: FC<CardProps> = (
                 <Image  src={!isBooked ? bookmark : bookmarkFilled} alt={"bookmark icon"}/>
             </div>
             <div className="absolute bottom-0 p-4 md:p-6">
-                <div className="flex text-xs font-light font-outfit opacity-75 text-white gap-x-2 md:text-[15px]">
+                <div className="flex text-xs font-light font-outfit opacity-75 text-white gap-x-2 md:text-[15px] items-center">
                     <p>{year}</p>
                     <p>·</p>
-                    <div className=" ">
-                        <Image src={category === "Movie" ? moviesIcon : tvseriesIcon} width={"15"} height={"8"} alt={category === "Movie" ? "Movie Icon" : 'TV Series Icon'} />
+                    <div className="h-3 w-3">
+                        <Image src={category === "Movie" ? moviesIcon : tvseriesIcon} alt={category === "Movie" ? "Movie Icon" : 'TV Series Icon'} />
                     </div>
                     <p>{category}</p>
                     <p>·</p>

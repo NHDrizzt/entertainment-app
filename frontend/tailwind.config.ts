@@ -11,7 +11,8 @@ const config: Config = {
       sm: '375px',
       md: '768px',
       lg: '976px',
-      xl: '1440px'
+      xl: '1440px',
+      xxl: '1920px'
     },
     extend: {
       letterSpacing: {
