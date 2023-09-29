@@ -23,7 +23,7 @@ export default function RootLayout({
           <UserContextProvider>
               <div className="flex flex-col h-screen xl:flex-row">
                   <Header />
-                  <div className="xl:mt-[64px]">
+                  <div className="xl:mt-[64px] xl:px-2">
                       <SearchBar />
                       {children}
                   </div>

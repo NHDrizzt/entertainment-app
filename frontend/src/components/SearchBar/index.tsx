@@ -6,7 +6,7 @@ import Image from 'next/image';
 const SearchBar = () => {
     return (
         <section>
-            <div className="flex pt-6 px-4 gap-4 md:pt-0.5 md:px-6 xl:w-full xl:px-1">
+            <div className="flex pt-6 px-4 gap-4 md:pt-0.5 md:px-6 xl:w-full xl:px-0">
                 <div className="w-6 h-6 md:w-8 md:h-8">
                     <Image src={searchIcon} alt="Search Icon" />
                 </div>

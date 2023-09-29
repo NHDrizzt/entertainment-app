@@ -7,7 +7,6 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-
     screens: {
       sm: '375px',
       md: '768px',
@@ -15,6 +14,9 @@ const config: Config = {
       xl: '1440px'
     },
     extend: {
+      letterSpacing: {
+        tightest: '-.0312px',
+      },
       fontFamily: {
         outfit: 'Outfit'
       },

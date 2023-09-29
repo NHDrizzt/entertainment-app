@@ -6,8 +6,8 @@ import HomeLink from "@/components/Link/HomeLink";
 import TvseriesLink from "@/components/Link/TvseriesLink";
 import Bookmark from "@/components/Link/Bookmark";
 import Image from 'next/image';
-import profilePic from '../../assets/image-avatar.png';
-import logoPic from '../../assets/logo.svg';
+import profilePic from '../../../public/image-avatar.png';
+import logoPic from '../../../public/logo.svg';
 import {useUserContext} from "@/context/UserContextProvider";
 
 const Header = () => {

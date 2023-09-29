@@ -2,7 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import homelink from '../../../public/icon-nav-home.svg';
 import Image from 'next/image';
-import Logo from "@/assets/Logo";
+import Logo from "@/components/Logo";
 import movieslink from "../../../public/icon-nav-movies.svg";
 import HomeSV from '../../../public/icon-nav-home.svg'
 import {useUserLocation} from "@/hooks/useUserLocation";
