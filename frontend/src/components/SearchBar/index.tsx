@@ -1,9 +1,16 @@
 'use client'
-import React from 'react';
+import React, {useState} from 'react';
 import searchIcon from '../../../public/icon-search.svg';
 import Image from 'next/image';
+import {useUserContext} from "@/context/UserContextProvider";
 
 const SearchBar = () => {
+    const { currentUserInput, updateUserInput } = useUserContext();
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        updateUserInput(e.target.value);
+    };
+
     return (
         <section>
             <div className="flex pt-6 px-4 gap-4 md:pt-0.5 md:px-6 xl:w-full xl:px-0">
@@ -11,7 +18,12 @@ const SearchBar = () => {
                     <Image src={searchIcon} alt="Search Icon" />
                 </div>
                 <input className="w-full bg-transparent text-white border border-transparent focus:outline-none placeholder:opacity-50 placeholder:font-outfit
-                placeholder:font-light placeholder:text-[16px] caret-redTomato font-outfit font-light text-[16px] md:placeholder:text-medium xl:w-[323px]" type="text" placeholder="Search for movies or TV series" maxLength={60} />
+                placeholder:font-light placeholder:text-[16px] caret-redTomato font-outfit font-light text-[16px] md:placeholder:text-medium xl:w-[323px]"
+                       type="text"
+                       placeholder="Search for movies or TV series"
+                       maxLength={60}
+                       value={currentUserInput}
+                       onChange={handleInputChange}/>
             </div>
         </section>
     );

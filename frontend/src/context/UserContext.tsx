@@ -5,8 +5,12 @@ import {createContext} from "react";
 interface UserContextType {
     currentUserLocation: string;
     setCurrentUserLocation: (location: string) => void;
+    currentUserInput: string;
+    updateUserInput: (input: string) => void;
 }
 export const UserContext = createContext<UserContextType>({
     currentUserLocation: "Home",
-    setCurrentUserLocation: () => {}
+    setCurrentUserLocation: () => {},
+    currentUserInput: "",
+    updateUserInput: () => {},
 });

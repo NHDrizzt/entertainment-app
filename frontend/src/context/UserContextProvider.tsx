@@ -6,10 +6,17 @@ import {UserContext} from "@/context/UserContext";
 const UserContextProvider = ({children}: {children: ReactNode}) => {
 
     const [currentUserLocation, setCurrentUserLocation] = useState<string>("Home");
+    const [currentUserInput, setCurrentUserInput] = useState<string>("");
+
+    const updateUserInput = (input: string) => {
+        setCurrentUserInput(input);
+    }
 
     const values = {
         currentUserLocation,
-        setCurrentUserLocation
+        setCurrentUserLocation,
+        currentUserInput,
+        updateUserInput,
     };
 
     return (

@@ -9,6 +9,7 @@ const Recommended = () => {
             <h1 className="font-outfit font-light text-[20px] text-white tracking-tightest md:text-large py-6">Recommended for you</h1>
             <div className="grid grid-cols-2 md:grid-cols-3 min-w-[350px] max-w-[370px] md:max-w-[719px] xl:grid-cols-4 xl:max-w-[1280px] xxl:grid-cols-5 xxl:max-w-[1620px]">
                 {
+
                     recommendeds.map((item, index) => (
                         <RecommendedCard
                             key={index}
