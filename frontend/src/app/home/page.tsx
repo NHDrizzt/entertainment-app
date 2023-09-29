@@ -44,6 +44,7 @@ export default function Home() {
                                                         category={item.category}
                                                         rating={item.rating}
                                                         isBookmarked={item.isBookmarked}
+                                                        onBookmarkToggle={() => {}}
                                                         isTrending={item.isTrending}
                                                     />
                                                 ))

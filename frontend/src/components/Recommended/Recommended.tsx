@@ -1,9 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import data from "@/json/data.json";
 import RecommendedCard from "@/components/RecommendedCard/RecommendedCard";
+import {useUserContext} from "@/context/UserContextProvider";
 
 const Recommended = () => {
-    const recommendeds = data.filter((item) => !item.thumbnail.trending);
+    const [recommendeds, setRecommendeds] = useState(data.filter((item) => !item.thumbnail.trending));
+    const { setUserBookmarks } = useUserContext();
+    const toggleBookmark = (index: number) => {
+        const updatedTrendingData = [...recommendeds];
+        updatedTrendingData[index].isBookmarked = !updatedTrendingData[index].isBookmarked;
+        setRecommendeds(updatedTrendingData);
+        setUserBookmarks((prevUserBookmarks) => {
+            const newUserBookmarks = [ ...prevUserBookmarks];
+            const newUserbookIndex = newUserBookmarks.indexOf(updatedTrendingData[index]);
+            if (newUserbookIndex === -1) {
+                newUserBookmarks.push(updatedTrendingData[index]);
+            } else {
+                newUserBookmarks.splice(newUserbookIndex, 1);
+            }
+            return newUserBookmarks;
+        })
+    };
+
     return (
         <div>
             <h1 className="font-outfit font-light text-[20px] text-white tracking-tightest md:text-large py-6">Recommended for you</h1>
@@ -29,7 +47,9 @@ const Recommended = () => {
                             category={item.category}
                             rating={item.rating}
                             isBookmarked={item.isBookmarked}
-                            isTrending={item.isTrending} />
+                            onBookmarkToggle={() => toggleBookmark(index)}
+                            isTrending={item.isTrending}
+                        />
                     ))
                 }
             </div>

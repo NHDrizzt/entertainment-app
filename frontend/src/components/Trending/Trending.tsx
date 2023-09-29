@@ -2,18 +2,36 @@ import React, {useEffect, useRef, useState} from 'react';
 import {motion} from "framer-motion";
 import TrendingCard from "@/components/TrendingCard/TrendingCard";
 import data from "@/json/data.json";
+import {useUserContext} from "@/context/UserContextProvider";
 
 const Trending = () => {
 
-    const trendingData = data.filter((item) => item.thumbnail.trending);
-
+    const [trendingData, setTrendingData] = useState(data.filter((item) => item.thumbnail.trending));
     const carouselSettings = useRef<HTMLDivElement | null>(null);
     const [width, setWidth] = useState(0);
+    const { setUserBookmarks } = useUserContext();
 
     useEffect(() => {
         if (carouselSettings.current) {
             setWidth(carouselSettings.current.scrollWidth - carouselSettings.current.offsetWidth);
         }}, [])
+
+    const toggleBookmark = (index: number) => {
+        const updatedTrendingData = [...trendingData];
+        updatedTrendingData[index].isBookmarked = !updatedTrendingData[index].isBookmarked;
+        setTrendingData(updatedTrendingData);
+        setUserBookmarks((prevUserBookmarks) => {
+            const newUserBookmarks = [...prevUserBookmarks];
+            const newUserbookIndex = newUserBookmarks.indexOf(updatedTrendingData[index]);
+            if (newUserbookIndex === -1) {
+                newUserBookmarks.push(updatedTrendingData[index]);
+            } else {
+                newUserBookmarks.splice(newUserbookIndex, 1);
+            }
+            return newUserBookmarks;
+        })
+    };
+
 
     return (
         <>
@@ -41,6 +59,7 @@ const Trending = () => {
                                 rating={item.rating}
                                 isBookmarked={item.isBookmarked}
                                 isTrending={item.isTrending}
+                                onBookmarkToggle={() => toggleBookmark(index)}
                             />
                         ))}
                     </motion.div>

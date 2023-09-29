@@ -15,5 +15,6 @@ interface CardProps {
     category: string;
     rating: string;
     isBookmarked: boolean;
+    onBookmarkToggle: () => void;
     isTrending: boolean;
 }
